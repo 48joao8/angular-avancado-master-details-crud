@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Category } from "../shared/category.model";
-import { CategoryService } from "../shared/category.service";
+import { Category } from '../shared/category.model';
+import { CategoryService } from '../shared/category.service';
 
 @Component({
   selector: 'app-category-list',
@@ -26,8 +26,8 @@ export class CategoryListComponent implements OnInit {
 
       if(mustDelete){
       this.categoryService.delete(category.id).subscribe(
-        () => this.categories = this.categories.filter(element => element != category),
-        () => alert("Erro ao excluir")
+        () => this.categories = this.categories.filter(element => element !== category),
+        () => alert('Erro ao excluir')
       )
     }
   }
