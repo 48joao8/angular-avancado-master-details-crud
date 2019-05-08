@@ -13,7 +13,7 @@ import { Entry } from "./entry.model";
 })
 export class EntryService {
 
-  private apiPath: string = "api/entries"
+  private apiPath = 'api/entries';
 
   constructor(private http: HttpClient, private categoryService: CategoryService) { }
 
@@ -57,9 +57,7 @@ export class EntryService {
           map(() => entry)
         );
       })
-    )
-
-    
+    );
   }
 
   delete(id: number): Observable<any> {
@@ -71,7 +69,7 @@ export class EntryService {
     )
   }
 
-  //PRIVATE METHODS
+  // PRIVATE METHODS
 
   private jsonDataToEntries(jsonData: any[]): Entry[] {
     const entries: Entry[] = [];
